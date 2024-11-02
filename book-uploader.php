@@ -54,4 +54,16 @@ function book_uploader_validate_fields($external_url, $local_file) {
 // Function to handle the posting of publications
 function book_uploader_post_publication() {
     // Add your code here to handle the posting of publications
+    $args = array(
+        'post_type' => 'libro',
+        'post_status' => 'publish',
+        'numberposts' => -1
+    );
+
+    $books = get_posts($args);
+
+    foreach ($books as $book) {
+        // Perform any necessary actions for each book post
+        // For example, you can update post meta, send notifications, etc.
+    }
 }
