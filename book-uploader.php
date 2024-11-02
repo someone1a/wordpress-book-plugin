@@ -67,3 +67,20 @@ function book_uploader_post_publication() {
         // For example, you can update post meta, send notifications, etc.
     }
 }
+
+// Add error handling for missing required files
+function book_uploader_check_required_files() {
+    $required_files = [
+        'includes/admin-menu.php',
+        'includes/book-upload-handler.php',
+        'includes/book-metabox.php',
+        'includes/display-functions.php'
+    ];
+
+    foreach ($required_files as $file) {
+        if (!file_exists(BOOK_UPLOADER_PATH . $file)) {
+            wp_die(__('Error: Required file missing: ' . $file));
+        }
+    }
+}
+add_action('plugins_loaded', 'book_uploader_check_required_files');
