@@ -74,5 +74,13 @@ function book_uploader_save_meta($post_id) {
         wp_redirect(add_query_arg('book_uploader_error', urlencode($error), get_edit_post_link($post_id, 'url')));
         exit;
     }
+
+    // Function to handle the posting of books
+    book_uploader_post_book($post_id);
 }
 add_action('save_post', 'book_uploader_save_meta');
+
+// Function to handle the posting of books
+function book_uploader_post_book($post_id) {
+    // Add your code here to handle the posting of books
+}

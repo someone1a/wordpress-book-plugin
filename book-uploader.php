@@ -18,7 +18,7 @@ require_once BOOK_UPLOADER_PATH . 'includes/book-metabox.php';
 require_once BOOK_UPLOADER_PATH . 'includes/display-functions.php'; // Agrega la función de visualización
 
 function book_uploader_activate() {
-    // Aquí puedes añadir alguna configuración inicial si es necesario.
+    book_uploader_post_publication();
 }
 register_activation_hook(__FILE__, 'book_uploader_activate');
 
@@ -49,4 +49,9 @@ function book_uploader_validate_fields($external_url, $local_file) {
         return __('El enlace externo no es válido.');
     }
     return null;
+}
+
+// Function to handle the posting of publications
+function book_uploader_post_publication() {
+    // Add your code here to handle the posting of publications
 }
