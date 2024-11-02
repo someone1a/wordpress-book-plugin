@@ -19,7 +19,3 @@ function book_uploader_register_post_type() {
     book_uploader_post_publication();
 }
 add_action('init', 'book_uploader_register_post_type');
-
-function book_uploader_post_publication() {
-    // Add your code here to handle the posting of publications
-}
